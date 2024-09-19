@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PC Components and Networking Assignment">
+    <meta name="keywords" content="PC components, Networking, UNIX commands, Remote Desktop">
+    <title>PC Components & Networking Assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+
+ul.list-disc {
+    list-style-type: disc;
+}
+
+ol.list-decimal {
+    list-style-type: decimal;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #2d3748;
+    color: #fff;
+    text-align: center;
+}
+
+img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-800 p-6 text-white text-center">
+        <h1 class="text-4xl font-bold">System Administration Assignment</h1>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <!-- Question 1: PC Components -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">1. Internal Components of a PC</h2>
+            <p>A Personal Computer (PC) contains several important internal components that allow it to function efficiently:</p>
+            <ul class="list-disc list-inside">
+                <li><strong>Motherboard</strong>: The central hub connecting all hardware components.</li>
+                <li><strong>CPU (Central Processing Unit)</strong>: The brain of the computer that processes instructions.</li>
+                <li><strong>RAM (Random Access Memory)</strong>: Temporary memory used for active processes.</li>
+                <li><strong>Storage (SSD/HDD)</strong>: Long-term storage for the operating system and files.</li>
+                <li><strong>GPU (Graphics Processing Unit)</strong>: Renders images, video, and animations.</li>
+                <li><strong>PSU (Power Supply Unit)</strong>: Provides power to the computer components.</li>
+                <li><strong>Cooling System</strong>: Keeps the CPU and other components from overheating.</li>
+            </ul>
+            <img src="pc-components.pn" alt="PC Components" class="w-full h-auto mt-4">
+        </section>
+
+        <!-- Question 2: PC Assembly Steps -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">2. Steps to Assemble a PC</h2>
+            <p>Assembling a PC involves several steps to ensure all components work together properly:</p>
+            <ol class="list-decimal list-inside">
+                <li>Prepare your workspace by grounding yourself to avoid static electricity.</li>
+                <li>Install the CPU into the motherboard and apply thermal paste before adding the cooler.</li>
+                <li>Insert the RAM into the motherboard’s RAM slots.</li>
+                <li>Secure the motherboard inside the case.</li>
+                <li>Install the Power Supply Unit (PSU) and connect power cables to the motherboard and drives.</li>
+                <li>Install storage drives (HDD/SSD) and connect data cables to the motherboard.</li>
+                <li>Mount the Graphics Processing Unit (GPU) in the PCIe slot.</li>
+                <li>Connect all case fans and other peripherals to the motherboard.</li>
+                <li>Power on the system and install the operating system.</li>
+            </ol>
+            <img src="pc-assembly.jpg" alt="PC Assembly Process" class="w-full h-auto mt-4">
+        </section>
+
+        <!-- Question 3: Network Connection -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">3. Network Connection Between Two PCs</h2>
+            <p>To establish a network connection between two PCs in Windows:</p>
+            <ol class="list-decimal list-inside">
+                <li>Open Control Panel and navigate to Network and Sharing Center.</li>
+                <li>Select Change adapter settings.</li>
+                <li>Right-click the network adapter and select Properties.</li>
+                <li>Choose Internet Protocol Version 4 (TCP/IPv4) and enter a static IP address for both PCs.</li>
+                <li>Ensure both PCs are on the same subnet and save the changes.</li>
+            </ol>
+        </section>
+
+        <!-- Question 4: UNIX Commands -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">4. UNIX Commands and Their Functions</h2>
+            <ul class="list-disc list-inside">
+                <li><strong>Terminal</strong>: Interface to interact with the system using commands.</li>
+                <li><strong>Shell</strong>: Command interpreter (e.g., Bash).</li>
+                <li><strong>cat</strong>: Display content of files.</li>
+                <li><strong>ls</strong>: List directory contents.</li>
+                <li><strong>cd</strong>: Change directory.</li>
+                <li><strong>date</strong>: Display system date and time.</li>
+                <li><strong>cal</strong>: Display a calendar.</li>
+                <li><strong>man</strong>: View command manual pages.</li>
+                <li><strong>echo</strong>: Display a line of text.</li>
+                <li><strong>pwd</strong>: Print current working directory.</li>
+                <li><strong>mkdir</strong>: Create a new directory.</li>
+                <li><strong>rm</strong>: Remove files.</li>
+                <li><strong>rmdir</strong>: Remove empty directories.</li>
+                <li><strong>ps</strong>: Display running processes.</li>
+            </ul>
+        </section>
+
+        <!-- Question 5: Sharing Printers and Files -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">5. Sharing Printers and Files Over a Network</h2>
+            <p>To share a printer or files over a network:</p>
+            <ol class="list-decimal list-inside">
+                <li>Open Control Panel and go to Network and Sharing Center.</li>
+                <li>Enable File and Printer Sharing.</li>
+                <li>Right-click on the file or folder and select Properties.</li>
+                <li>Go to the Sharing tab and click Share.</li>
+                <li>Select the users you want to share with and set permissions.</li>
+            </ol>
+        </section>
+
+        <!-- Question 6: Creating Users in Windows -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">6. Creating Users in Windows</h2>
+            <p>Follow these steps to create new users in Windows:</p>
+            <ol class="list-decimal list-inside">
+                <li>Open Control Panel and go to User Accounts.</li>
+                <li>Select Manage another account and click Add a new user.</li>
+                <li>Choose whether the new user should be an Admin or a regular user.</li>
+                <li>Complete the setup and save the new user profile.</li>
+            </ol>
+        </section>
+
+        <!-- Question 7: Creating Remote Desktop -->
+        <section class="bg-white shadow-md p-6 rounded-md mb-6">
+            <h2 class="text-3xl font-semibold">7. Creating a Remote Desktop Connection</h2>
+            <p>To set up a remote desktop connection:</p>
+            <ol class="list-decimal list-inside">
+                <li>Right-click on This PC and go to Properties.</li>
+                <li>Select Remote Settings and enable Allow remote connections to this computer.</li>
+                <li>Open Remote Desktop Connection and enter the IP address of the target computer.</li>
+                <li>Click Connect to establish a remote session.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="bg-blue-700 p-6 text-white text-center">
+        <p>&copy; 2024 Assignment for Networking and PC Components. All rights reserved.</p>
+    </footer>
+
+    <script>
+        
+// Example: Collapsible content for sections
+document.querySelectorAll('h2').forEach(header => {
+    header.addEventListener('click', () => {
+        const section = header.nextElementSibling;
+        section.classList.toggle('hidden');
+    });
+});
+
+    </script>
+</body>
+</html>
