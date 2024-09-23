@@ -1,181 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PC Components and Networking Assignment">
     <meta name="keywords" content="PC components, Networking, UNIX commands, Remote Desktop">
     <title>System Administration Assignment</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <script src="https://unpkg.com/tailwindcss-cdn@3.4.10/tailwindcss.js"></script>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-}
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
 
-h2 {
-    margin-bottom: 10px;
-    color: #333;
-}
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-p {
-    margin-bottom: 10px;
-}
+        p {
+            margin-bottom: 10px;
+        }
 
-ul, ol {
-    margin-left: 20px;
-}
+        ul,
+        ol {
+            margin-left: 20px;
+        }
 
-ul.list-disc {
-    list-style-type: disc;
-}
+        ul.list-disc {
+            list-style-type: disc;
+        }
 
-ol.list-decimal {
-    list-style-type: decimal;
-}
+        ol.list-decimal {
+            list-style-type: decimal;
+        }
 
-footer {
-    margin-top: 20px;
-    background-color: #2d3748;
-    color: #fff;
-    text-align: center;
-}
 
-img {
+
+        /* img {
     margin-top: 20px;
     max-width: 100%;
     height: auto;
-}
 
+    -- Hide all images globally
+    display: none;
+} */
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f9f9f9;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            color: #1e40af;
+            /* Tailwind's 'blue-700' for a modern look */
+            word-wrap: break-word;
+            /* Wraps long lines */
+            overflow-x: auto;
+            /* Adds horizontal scroll on overflow */
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
-    <header class="bg-blue-800 p-6 text-white text-center">
-        <h1 class="text-4xl font-bold">System Administration Assignment</h1>
+    <header class="bg-blue-900 p-6 text-center header-container">
+        <h1 class="text-3xl font-bold mb-2 text-white underline">Assignments Solutions</h1>
+        <p class="text-xl text-orange-200 mb-4">Compiled Solutions : System Administration strong (SEMESTER - 02)</p>
+        <p class="text-md font-medium text-green-50">Compiled by : <span class="font-bold text-red-400">Sagar
+                Kundu</span>, Computer Science Department (Senior)</p>
     </header>
 
     <main class="container mx-auto p-6">
+
         <!-- Question 1: PC Components -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">1. Internal Components of a PC</h2>
-            <p>A Personal Computer (PC) contains several important internal components that allow it to function efficiently:</p>
-            <ul class="list-disc list-inside">
-                <li><strong>Motherboard</strong>: The central hub connecting all hardware components.</li>
-                <li><strong>CPU (Central Processing Unit)</strong>: The brain of the computer that processes instructions.</li>
-                <li><strong>RAM (Random Access Memory)</strong>: Temporary memory used for active processes.</li>
-                <li><strong>Storage (SSD/HDD)</strong>: Long-term storage for the operating system and files.</li>
-                <li><strong>GPU (Graphics Processing Unit)</strong>: Renders images, video, and animations.</li>
-                <li><strong>PSU (Power Supply Unit)</strong>: Provides power to the computer components.</li>
-                <li><strong>Cooling System</strong>: Keeps the CPU and other components from overheating.</li>
+            <h2 class="text-3xl font-semibold mb-4">1. Internal Components of a PC</h2>
+            <p class="mb-4">A Personal Computer (PC) contains several important internal components that allow it to
+                function efficiently. Below are the key parts and their roles:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li class="mb-2">
+                    <strong>Motherboard:</strong>
+                    <p class="pl-6">The motherboard is the main circuit board of the computer. It serves as the central
+                        hub, connecting all the other components such as the CPU, RAM, storage, and GPU. It also allows
+                        these components to communicate with each other.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>CPU (Central Processing Unit):</strong>
+                    <p class="pl-6">The CPU, often referred to as the "brain" of the computer, performs most of the
+                        processing inside the PC. It executes instructions from programs by performing calculations and
+                        tasks needed to run applications, operating systems, and processes.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>RAM (Random Access Memory):</strong>
+                    <p class="pl-6">RAM is the computer's temporary memory used to store data that is currently being
+                        processed. It allows quick access to files and programs that are in use, improving the system's
+                        speed and performance.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>Storage (SSD/HDD):</strong>
+                    <p class="pl-6">The storage drive (either a Solid-State Drive (SSD) or Hard Disk Drive (HDD)) is
+                        responsible for saving your files, operating system, and applications. SSDs are faster and more
+                        reliable, while HDDs offer more storage capacity at a lower price.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>GPU (Graphics Processing Unit):</strong>
+                    <p class="pl-6">The GPU is designed to handle rendering images, videos, and animations. It takes the
+                        load off the CPU for graphics-intensive tasks, making it essential for gaming, video editing,
+                        and graphic design.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>PSU (Power Supply Unit):</strong>
+                    <p class="pl-6">The PSU converts power from your wall outlet into usable power for the computer. It
+                        supplies the correct voltage and current to each component, ensuring that the system operates
+                        safely and efficiently.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>Cooling System:</strong>
+                    <p class="pl-6">The cooling system, which includes fans and heat sinks, helps keep the CPU and other
+                        components from overheating. Proper cooling is vital to maintaining the performance and
+                        longevity of the hardware.</p>
+                </li>
             </ul>
-            <img src="pc-components.pn" alt="PC Components" class="w-full h-auto mt-4">
+            <!-- Placeholder for Image (Currently Hidden) -->
+            <!-- <img src="pc-components.png" alt="PC Components" class="w-full h-auto mt-4"> -->
         </section>
+
 
         <!-- Question 2: PC Assembly Steps -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">2. Steps to Assemble a PC</h2>
-            <p>Assembling a PC involves several steps to ensure all components work together properly:</p>
-            <ol class="list-decimal list-inside">
-                <li>Prepare your workspace by grounding yourself to avoid static electricity.</li>
-                <li>Install the CPU into the motherboard and apply thermal paste before adding the cooler.</li>
-                <li>Insert the RAM into the motherboard’s RAM slots.</li>
-                <li>Secure the motherboard inside the case.</li>
-                <li>Install the Power Supply Unit (PSU) and connect power cables to the motherboard and drives.</li>
-                <li>Install storage drives (HDD/SSD) and connect data cables to the motherboard.</li>
-                <li>Mount the Graphics Processing Unit (GPU) in the PCIe slot.</li>
-                <li>Connect all case fans and other peripherals to the motherboard.</li>
-                <li>Power on the system and install the operating system.</li>
+            <h2 class="text-3xl font-semibold mb-4">2. Steps to Assemble a PC</h2>
+            <p class="mb-4">Assembling a PC involves several steps to ensure that all components are correctly installed
+                and work together properly. Follow these steps for a successful build:</p>
+            <ol class="list-decimal list-inside space-y-2">
+                <li>
+                    <strong>Prepare your workspace:</strong>
+                    <p class="pl-6">Start by ensuring that your workspace is clean and static-free. Ground yourself by
+                        using an anti-static wrist strap or touching a grounded metal object to avoid damaging
+                        components with static electricity.</p>
+                </li>
+                <li>
+                    <strong>Install the CPU and cooler:</strong>
+                    <p class="pl-6">Carefully insert the CPU into the motherboard's socket, aligning the pins or notches
+                        as indicated. Apply a small amount of thermal paste on top of the CPU, and then securely attach
+                        the CPU cooler over it to prevent overheating.</p>
+                </li>
+                <li>
+                    <strong>Insert the RAM:</strong>
+                    <p class="pl-6">Place the RAM sticks into the designated slots on the motherboard. Ensure the notch
+                        on the RAM aligns with the slot and press down until the clips on the sides lock it in place.
+                    </p>
+                </li>
+                <li>
+                    <strong>Secure the motherboard:</strong>
+                    <p class="pl-6">Carefully position the motherboard inside the PC case and screw it into place,
+                        aligning it with the standoffs. Make sure it is securely fastened and all ports are accessible
+                        from the case’s I/O panel.</p>
+                </li>
+                <li>
+                    <strong>Install the Power Supply Unit (PSU):</strong>
+                    <p class="pl-6">Mount the PSU into its designated spot in the case (usually at the bottom or top
+                        rear). Connect the 24-pin power cable to the motherboard and other power cables to the CPU and
+                        storage devices.</p>
+                </li>
+                <li>
+                    <strong>Install storage drives:</strong>
+                    <p class="pl-6">Place your SSD or HDD in the drive bays inside the case. Secure the drives with
+                        screws, and connect both the data cables (SATA) and power cables from the PSU to the motherboard
+                        and drives.</p>
+                </li>
+                <li>
+                    <strong>Mount the GPU:</strong>
+                    <p class="pl-6">Insert the Graphics Processing Unit (GPU) into the PCIe slot on the motherboard.
+                        Secure the GPU to the case with screws and connect the necessary power cables from the PSU to
+                        the GPU.</p>
+                </li>
+                <li>
+                    <strong>Connect case fans and peripherals:</strong>
+                    <p class="pl-6">Attach any case fans, front panel connectors, and other peripherals (e.g., USB
+                        ports) to the motherboard using the designated headers and ports.</p>
+                </li>
+                <li>
+                    <strong>Power on and install the operating system:</strong>
+                    <p class="pl-6">After assembling all components, connect the PC to a power source and monitor. Power
+                        on the system and enter the BIOS to verify that all components are recognized. Install the
+                        operating system from a bootable USB or DVD.</p>
+                </li>
             </ol>
-            <img src="pc-assembly.jpg" alt="PC Assembly Process" class="w-full h-auto mt-4">
+            <!-- Image Placeholder (Currently Hidden) -->
+            <!-- <img src="pc-assembly.jpg" alt="PC Assembly Process" class="w-full h-auto mt-4"> -->
         </section>
 
         <!-- Question 3: Network Connection -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">3. Network Connection Between Two PCs</h2>
-            <p>To establish a network connection between two PCs in Windows:</p>
-            <ol class="list-decimal list-inside">
-                <li>Open Control Panel and navigate to Network and Sharing Center.</li>
-                <li>Select Change adapter settings.</li>
-                <li>Right-click the network adapter and select Properties.</li>
-                <li>Choose Internet Protocol Version 4 (TCP/IPv4) and enter a static IP address for both PCs.</li>
-                <li>Ensure both PCs are on the same subnet and save the changes.</li>
+            <h2 class="text-3xl font-semibold mb-4">3. Network Connection Between Two PCs</h2>
+            <p class="mb-4">To establish a network connection between two PCs in Windows, follow these steps:</p>
+            <ol class="list-decimal list-inside mb-4">
+                <li class="mb-2">
+                    <strong>Open Control Panel and navigate to Network and Sharing Center:</strong>
+                    <p>Go to the Control Panel, then find and open the Network and Sharing Center.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>Select Change adapter settings:</strong>
+                    <p>In the Network and Sharing Center, click on <i>Change adapter settings</i> on the left-hand menu.
+                    </p>
+                </li>
+                <li class="mb-2">
+                    <strong>Right-click the network adapter and select Properties:</strong>
+                    <p>Right-click the active network adapter (either Ethernet or Wi-Fi) and choose <i>Properties</i>.
+                    </p>
+                </li>
+                <li class="mb-2">
+                    <strong>Choose Internet Protocol Version 4 (TCP/IPv4) and enter a static IP address for both
+                        PCs:</strong>
+                    <p>In the properties window, select <i>Internet Protocol Version 4 (TCP/IPv4)</i> and click
+                        <i>Properties</i>. Manually enter the following information:</p>
+                    <ul class="list-disc list-inside pl-6">
+                        <li><strong>PC 1 IP Address:</strong> 192.168.1.1 | <strong>Default gateway</strong> 192.168.1.2
+                            (Optional)</li>
+                        <li><strong>PC 2 IP Address:</strong> 192.168.1.2 | <strong>Default gateway</strong> 192.168.1.1
+                            (Optional)</li>
+                        <li><strong>Subnet Mask:</strong> 255.255.255.0</li>
+                    </ul>
+                </li>
+                <li class="mb-2">
+                    <strong>Ensure both PCs are on the same subnet and save the changes:</strong>
+                    <p>Once both PCs have IP addresses on the same subnet, save your changes by clicking <i>OK</i>. The
+                        PCs are now connected.</p>
+                </li>
             </ol>
+            <p>If everything is set up correctly, the two PCs should now be able to communicate with each other over the
+                network.</p>
         </section>
+
+
+
 
         <!-- Question 4: UNIX Commands -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">4. UNIX Commands and Their Functions</h2>
-            <ul class="list-disc list-inside">
-                <li><strong>Terminal</strong>: Interface to interact with the system using commands.</li>
-                <li><strong>Shell</strong>: Command interpreter (e.g., Bash).</li>
-                <li><strong>cat</strong>: Display content of files.</li>
-                <li><strong>ls</strong>: List directory contents.</li>
-                <li><strong>cd</strong>: Change directory.</li>
-                <li><strong>date</strong>: Display system date and time.</li>
-                <li><strong>cal</strong>: Display a calendar.</li>
-                <li><strong>man</strong>: View command manual pages.</li>
-                <li><strong>echo</strong>: Display a line of text.</li>
-                <li><strong>pwd</strong>: Print current working directory.</li>
-                <li><strong>mkdir</strong>: Create a new directory.</li>
-                <li><strong>rm</strong>: Remove files.</li>
-                <li><strong>rmdir</strong>: Remove empty directories.</li>
-                <li><strong>ps</strong>: Display running processes.</li>
+            <h2 class="text-3xl font-semibold mb-4">4. UNIX Commands and Their Functions</h2>
+            <p class="mb-4">UNIX commands are used to interact with the system through the terminal. Below are some
+                common UNIX commands, their functions, and examples of usage:</p>
+            <ul class="list-disc list-inside space-y-4">
+                <li>
+                    <strong>Terminal</strong>:
+                    <p class="pl-6">A text-based interface that allows users to interact with the system by executing
+                        commands.</p>
+                    <p class="pl-6 italic text-gray-600">Example: Open the terminal using <code
+                            class="bg-gray-100 p-1 rounded text-blue-600"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd></code>.
+                    </p>
+                </li>
+                <li>
+                    <strong>Shell</strong>:
+                    <p class="pl-6">A command interpreter, like Bash, that processes commands.</p>
+                    <p class="pl-6 italic text-gray-600">Example: The default shell on most Linux systems is Bash, where
+                        you can run commands like <code class="bg-gray-100 p-1 rounded text-blue-600">ls</code> and
+                        <code class="bg-gray-100 p-1 rounded text-blue-600">cd</code>.</p>
+                </li>
+                <li>
+                    <strong>cat</strong>:
+                    <p class="pl-6">Displays the content of files.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">cat file.txt</code> will show the content of
+                        "file.txt".</p>
+                </li>
+                <li>
+                    <strong>ls</strong>:
+                    <p class="pl-6">Lists all files and directories in the current directory.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">ls -l</code> displays files in long format.
+                    </p>
+                </li>
+                <li>
+                    <strong>cd</strong>:
+                    <p class="pl-6">Changes the current working directory.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">cd /home/user/Documents</code> changes the
+                        directory to "Documents".</p>
+                </li>
+                <li>
+                    <strong>date</strong>:
+                    <p class="pl-6">Displays the current system date and time.</p>
+                    <p class="pl-6 italic text-gray-600">Example: Running <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">date</code> returns the current date and time.
+                    </p>
+                </li>
+                <li>
+                    <strong>cal</strong>:
+                    <p class="pl-6">Displays a calendar.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">cal 2024</code> shows the calendar for 2024.
+                    </p>
+                </li>
+                <li>
+                    <strong>man</strong>:
+                    <p class="pl-6">Displays the manual page for a command.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">man ls</code> opens the manual for the <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">ls</code> command.</p>
+                </li>
+                <li>
+                    <strong>echo</strong>:
+                    <p class="pl-6">Outputs a line of text.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">echo "Hello, World!"</code> prints "Hello,
+                        World!" in the terminal.</p>
+                </li>
+                <li>
+                    <strong>pwd</strong>:
+                    <p class="pl-6">Prints the current working directory.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">pwd</code> returns the full path.</p>
+                </li>
+                <li>
+                    <strong>mkdir</strong>:
+                    <p class="pl-6">Creates a new directory.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">mkdir new_folder</code> creates a folder named
+                        "new_folder".</p>
+                </li>
+                <li>
+                    <strong>rm</strong>:
+                    <p class="pl-6">Removes files or directories.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">rm file.txt</code> deletes "file.txt".</p>
+                </li>
+                <li>
+                    <strong>rmdir</strong>:
+                    <p class="pl-6">Removes empty directories.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">rmdir empty_folder</code> removes
+                        "empty_folder".</p>
+                </li>
+                <li>
+                    <strong>ps</strong>:
+                    <p class="pl-6">Displays running processes.</p>
+                    <p class="pl-6 italic text-gray-600">Example: <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">ps aux</code> shows all running processes and
+                        their details.</p>
+                </li>
             </ul>
         </section>
 
+
+
         <!-- Question 5: Sharing Printers and Files -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">5. Sharing Printers and Files Over a Network</h2>
-            <p>To share a printer or files over a network:</p>
-            <ol class="list-decimal list-inside">
-                <li>Open Control Panel and go to Network and Sharing Center.</li>
-                <li>Enable File and Printer Sharing.</li>
-                <li>Right-click on the file or folder and select Properties.</li>
-                <li>Go to the Sharing tab and click Share.</li>
-                <li>Select the users you want to share with and set permissions.</li>
+            <h2 class="text-3xl font-semibold mb-4">5. Sharing Printers and Files Over a Network</h2>
+            <p class="mb-4">Sharing printers and files over a network in Windows allows other users on the same network
+                to access shared resources. Follow these steps to enable file and printer sharing:</p>
+            <ol class="list-decimal list-inside space-y-4">
+                <li>
+                    <strong>Open Control Panel</strong>:
+                    <p class="pl-6">Navigate to the Control Panel by searching for it in the Start menu.</p>
+                </li>
+                <li>
+                    <strong>Network and Sharing Center</strong>:
+                    <p class="pl-6">In Control Panel, find <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Network and Sharing Center</code> under
+                        "Network and Internet".</p>
+                    <p class="pl-6 italic text-gray-600">Example: Go to Control Panel &gt; Network and Sharing Center
+                        &gt; Advanced Sharing Settings.</p>
+                </li>
+                <li>
+                    <strong>Enable File and Printer Sharing</strong>:
+                    <p class="pl-6">In the advanced sharing settings, turn on <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">File and Printer Sharing</code> to allow
+                        others on the network to access shared files and printers.</p>
+                </li>
+                <li>
+                    <strong>Share a File or Folder</strong>:
+                    <p class="pl-6">Right-click the file or folder you wish to share, then select <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Properties</code>.</p>
+                    <p class="pl-6 italic text-gray-600">Example: Right-click a folder &gt; Properties &gt; Sharing tab.
+                    </p>
+                </li>
+                <li>
+                    <strong>Select Users and Set Permissions</strong>:
+                    <p class="pl-6">In the Sharing tab, click <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Share</code>, then choose users from your
+                        network and set the appropriate permissions (Read/Write).</p>
+                    <p class="pl-6 italic text-gray-600">Example: Share a file with a specific user and allow read or
+                        write access as needed.</p>
+                </li>
             </ol>
+            <!-- <img src="sharing-printer-files.jpg" alt="Sharing Printers and Files" class="w-full h-auto mt-4"> -->
         </section>
+
+
+
 
         <!-- Question 6: Creating Users in Windows -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">6. Creating Users in Windows</h2>
-            <p>Follow these steps to create new users in Windows:</p>
-            <ol class="list-decimal list-inside">
-                <li>Open Control Panel and go to User Accounts.</li>
-                <li>Select Manage another account and click Add a new user.</li>
-                <li>Choose whether the new user should be an Admin or a regular user.</li>
-                <li>Complete the setup and save the new user profile.</li>
+            <h2 class="text-3xl font-semibold mb-4">6. Creating Users in Windows</h2>
+            <p class="mb-4">Follow these steps to create new users in Windows:</p>
+            <ol class="list-decimal list-inside space-y-4">
+                <li>
+                    <strong>Open Control Panel</strong>:
+                    <p class="pl-6">Search for "Control Panel" in the Start menu and click on it to open.</p>
+                </li>
+                <li>
+                    <strong>User Accounts</strong>:
+                    <p class="pl-6">In the Control Panel window, find and click on <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">User Accounts</code>.</p>
+                    <p class="pl-6 italic text-gray-600">Example: This section allows you to manage existing user
+                        accounts.</p>
+                </li>
+                <li>
+                    <strong>Manage Another Account</strong>:
+                    <p class="pl-6">Click on <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Manage another account</code>, then select
+                        <code class="bg-gray-100 p-1 rounded text-blue-600">Add a new user</code> to create a new
+                        account.</p>
+                </li>
+                <li>
+                    <strong>Select User Type</strong>:
+                    <p class="pl-6">You will be prompted to choose whether the new user should be an Admin or a regular
+                        user. Select the appropriate option based on the level of access needed.</p>
+                    <p class="pl-6 italic text-gray-600">Example: Choosing <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Administrator</code> grants full access to the
+                        system.</p>
+                </li>
+                <li>
+                    <strong>Complete the Setup</strong>:
+                    <p class="pl-6">After selecting the user type, follow the on-screen instructions:</p>
+                    <ul class="pl-8 list-disc">
+                        <li>Enter the new user's full name and password.</li>
+                        <li>Ensure all required fields are filled out.</li>
+                        <li>Click the <code class="bg-gray-100 p-1 rounded text-blue-600">Create Account</code> button
+                            to finalize the account setup.</li>
+                        <li>After the setup is complete, verify the new account in the <code
+                                class="bg-gray-100 p-1 rounded text-blue-600">User Accounts</code> section of the
+                            Control Panel.</li>
+                    </ul>
+                </li>
+
             </ol>
         </section>
+
 
         <!-- Question 7: Creating Remote Desktop -->
         <section class="bg-white shadow-md p-6 rounded-md mb-6">
-            <h2 class="text-3xl font-semibold">7. Creating a Remote Desktop Connection</h2>
-            <p>To set up a remote desktop connection:</p>
-            <ol class="list-decimal list-inside">
-                <li>Right-click on This PC and go to Properties.</li>
-                <li>Select Remote Settings and enable Allow remote connections to this computer.</li>
-                <li>Open Remote Desktop Connection and enter the IP address of the target computer.</li>
-                <li>Click Connect to establish a remote session.</li>
+            <h2 class="text-3xl font-semibold mb-4">7. Creating a Remote Desktop Connection</h2>
+            <p class="mb-4">To set up a remote desktop connection:</p>
+            <ol class="list-decimal list-inside space-y-4">
+                <li>
+                    <strong>Right-click on This PC</strong>:
+                    <p class="pl-6">Locate "This PC" on your desktop or in File Explorer. Right-click on it and select
+                        <code class="bg-gray-100 p-1 rounded text-blue-600">Properties</code>.</p>
+                </li>
+                <li>
+                    <strong>Select Remote Settings</strong>:
+                    <p class="pl-6">In the System window, click on <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Remote settings</code> on the left side.</p>
+                    <p class="pl-6">Check the box for <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Allow remote connections to this computer</code>.
+                    </p>
+                </li>
+                <li>
+                    <strong>Open Remote Desktop Connection</strong>:
+                    <p class="pl-6">Press <code class="bg-gray-100 p-1 rounded text-blue-600">Windows + R</code> to open
+                        the Run dialog, then type <code class="bg-gray-100 p-1 rounded text-blue-600">mstsc</code> and
+                        press Enter. Enter the IP address of the target computer.</p>
+                </li>
+                <li>
+                    <strong>Click Connect</strong>:
+                    <p class="pl-6">After entering the IP address, click on the <code
+                            class="bg-gray-100 p-1 rounded text-blue-600">Connect</code> button to establish a remote
+                        session.</p>
+                </li>
             </ol>
         </section>
+
     </main>
 
-    <footer class="bg-blue-700 p-6 text-white text-center">
-        <p>&copy; 2024 Assignment for Networking and PC Components. All rights reserved.</p>
+    <!-- Pop-up element -->
+    <div id="popup" class="popup"></div>
+
+    <!-- Footer  -->
+
+    <footer class="text-gray-600 bg-white body-font dark:bg-gray-800 dark:text-white">
+        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <div
+                class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 dark:text-gray-200">
+                <img width="48" height="48" src="1 .png" name="logo" alt="CodeWithHarry Logo" class="rounded h-12" />
+                <div class="ml-3 text-xl">Sagar Kundu</div>
+            </div>
+            <p
+                class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 mt-4 md:mt-2 mb-2 md:mb-0 text-center dark:text-gray-400">
+                Copyright ©
+                <!-- -->2024<!-- -->
+                sa001gar.github.io<!-- -->
+            </p>
+            <div class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+                style="align-items: center">
+                <a href="https://www.facebook.com/#" aria-label="facebook" target="_blank" rel="noreferrer"
+                    class="text-gray-500 dark:text-gray-300" target="_blank"><svg fill="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                        viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg></a><a href="https://www.twitter.com/SagarKundu" aria-label="twitter" target="_blank"
+                    rel="noreferrer" class="ml-3 text-gray-500 dark:text-gray-300" target="_blank"><svg
+                        fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg></a><a href="https://www.instagram.com/sagarkundu._" aria-label="instagram" target="_blank"
+                    rel="noreferrer" class="ml-3 text-gray-500 dark:text-gray-300" target="_blank"><svg fill="none"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg></a><a href="https://www.github.com/sa001gar" aria-label="github" target="_blank"
+                    rel="noreferrer" class="ml-3 text-gray-500 dark:text-gray-300" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                        class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z">
+                        </path>
+                    </svg></a>
+            </div>
+        </div>
     </footer>
 
     <script>
-        
-// Example: Collapsible content for sections
-document.querySelectorAll('h2').forEach(header => {
-    header.addEventListener('click', () => {
-        const section = header.nextElementSibling;
-        section.classList.toggle('hidden');
-    });
-});
+
+document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showPopup("Right-click is disabled on this site.");
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // Detect Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if ((e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+                showPopup("Keyboard shortcuts are disabled on this site.");
+            }
+        });
+
+        function showPopup(message) {
+            const popup = document.getElementById('popup');
+            popup.innerText = message;
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Detect if console is open
+        (function() {
+            const devtools = /./;
+            devtools.toString = function() {
+                console.log("If You are here..! You are a good developer.");
+            };
+            console.log("%c ", devtools);
+        })();
+
+
 
     </script>
 </body>
+
 </html>
